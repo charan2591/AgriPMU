@@ -20,5 +20,7 @@ class LoginActivity : AppCompatActivity()
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
+
+//        GitHub Generated Token : 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
     }
 }
