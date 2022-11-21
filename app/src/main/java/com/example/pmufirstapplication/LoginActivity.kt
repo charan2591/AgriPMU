@@ -1,6 +1,8 @@
 package com.example.pmufirstapplication
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import androidx.navigation.ui.AppBarConfiguration
@@ -22,5 +24,11 @@ class LoginActivity : AppCompatActivity()
         setSupportActionBar(binding.toolbar)
 
 //        GitHub Generated Token : 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
+    }
+
+    fun login(view: View) {
+       val intt :  Intent  = Intent(this,HomeActivity::class.java)
+        startActivity(intt)
+
     }
 }

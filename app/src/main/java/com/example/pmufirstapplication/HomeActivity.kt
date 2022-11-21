@@ -2,6 +2,7 @@ package com.example.pmufirstapplication
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
@@ -38,10 +39,6 @@ class HomeActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
 
-        val navController = findNavController(R.id.nav_host_fragment_content_home)
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
-
         binding.fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAnchorView(R.id.fab)
@@ -66,8 +63,6 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun observeData() {
-
-
         viewModel.list.observe(this, Observer {
             Log.i("data",it.toString())
             binding.recycler.adapter = RecyclerAdapter(viewModel,it,this)
@@ -96,5 +91,9 @@ class HomeActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_home)
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
+    }
+
+    fun saveData(view: View) {
+        addData()
     }
 }

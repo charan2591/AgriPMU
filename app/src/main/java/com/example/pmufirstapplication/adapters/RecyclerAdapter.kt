@@ -16,12 +16,14 @@ import com.example.pmufirstapplication.viewmodels.MainViewModel
 class RecyclerAdapter(val viewModel: MainViewModel , val arrayList: ArrayList<MainModel>
 , val context: Context) : RecyclerView.Adapter<RecyclerAdapter.MainViewHolder>(){
 
-    class MainViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+   inner class MainViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(itemModel: MainModel)
         {
             itemView.findViewById<TextView>(R.id.title).text = itemModel.title
             itemView.findViewById<ImageButton>(R.id.delete).setOnClickListener{
+                viewModel.remove(itemModel)
+                notifyItemRemoved(arrayList.indexOf(itemModel))
 
             }
         }
