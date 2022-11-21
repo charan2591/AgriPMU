@@ -2,25 +2,20 @@ package com.example.pmufirstapplication
 
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.WindowCompat
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.get
-import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pmufirstapplication.adapters.RecyclerAdapter
 import com.example.pmufirstapplication.databinding.ActivityHomeBinding
 import com.example.pmufirstapplication.models.MainModel
 import com.example.pmufirstapplication.viewmodels.MainViewModel
 import com.example.pmufirstapplication.viewmodels.MainViewModelFactory
+import com.google.android.material.snackbar.Snackbar
 
 class HomeActivity : AppCompatActivity() {
 
@@ -31,13 +26,14 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var viewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        WindowCompat.setDecorFitsSystemWindows(window, false)
+//        WindowCompat.setDecorFitsSystemWindows(window, false)
         super.onCreate(savedInstanceState)
 
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         binding.fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -87,10 +83,15 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_home)
-        return navController.navigateUp(appBarConfiguration)
-                || super.onSupportNavigateUp()
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.getItemId()) {
+            android.R.id.home -> {
+                // todo: goto back activity from here
+                finish()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
     fun saveData(view: View) {
