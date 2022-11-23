@@ -9,4 +9,18 @@
     <color name="colorPrimaryDark">#006500</color>
     <color name="colorAccent">#28a745</color>
 
+    <color name="colorGrad1">#7DBF4B</color>
+    <color name="colorGrad2">#52B14F</color>
+    <color name="colorGrad3">#6FBA4D</color>
+    <color name="colorGrad4">#89C34A</color>
+    <color name="colorGreenBorder">#72BF72</color>
+    <color name="colorLightGrnBox">#EDF7ED</color>
+    <color name="colorBorderGrey">#D9D9D9</color>
+    <color name="colorSelectedGrey">#F3F3F2</color>
+    <color name="colorSelectedTab">#36425A</color>
+    <color name="colorUnSelectedBottomTab">#A4A4A4</color>
+    <color name="colorSelectedBottomTab">#77C078</color>
+    <color name="colorScreenBack">#FDFDFD</color>
+    <color name="colorTransparntBlack">#575554</color>
+
 </resources>

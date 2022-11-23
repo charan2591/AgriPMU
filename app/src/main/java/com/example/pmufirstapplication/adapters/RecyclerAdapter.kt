@@ -1,6 +1,7 @@
 package com.example.pmufirstapplication.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.pmufirstapplication.MultiSelectorRadioActivity
 
 import com.example.pmufirstapplication.R
 import com.example.pmufirstapplication.models.MainModel
@@ -23,7 +25,10 @@ class RecyclerAdapter(val viewModel: MainViewModel , val arrayList: ArrayList<Ma
             itemView.findViewById<TextView>(R.id.title).text = itemModel.title
             itemView.findViewById<ImageButton>(R.id.delete).setOnClickListener{
                 viewModel.remove(itemModel)
-                notifyItemRemoved(arrayList.indexOf(itemModel))
+//                notifyItemRemoved(arrayList.indexOf(itemModel))
+
+                val intent = Intent(context,MultiSelectorRadioActivity::class.java)
+                context.startActivity(intent)
 
             }
         }
