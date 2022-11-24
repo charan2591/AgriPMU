@@ -9,6 +9,7 @@ import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.pmufirstapplication.BottomBarActivity
 import com.example.pmufirstapplication.MultiSelectorRadioActivity
 
 import com.example.pmufirstapplication.R
@@ -27,7 +28,7 @@ class RecyclerAdapter(val viewModel: MainViewModel , val arrayList: ArrayList<Ma
                 viewModel.remove(itemModel)
 //                notifyItemRemoved(arrayList.indexOf(itemModel))
 
-                val intent = Intent(context,MultiSelectorRadioActivity::class.java)
+                val intent = Intent(context,BottomBarActivity::class.java)
                 context.startActivity(intent)
 
             }
