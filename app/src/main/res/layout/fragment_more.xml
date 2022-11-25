@@ -41,8 +41,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="AGRICULTURE"/>
+                    android:layout_marginTop="10dp"
+                    android:text="AGRICULTURE"
+                    android:textSize="13sp"/>
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -76,7 +77,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="10dp"
+                    android:textSize="13sp"
                     android:text="HORTICULTURE"/>
             </LinearLayout>
 
@@ -117,7 +119,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="10dp"
+                    android:textSize="13sp"
                     android:text="SERICULTURE"/>
             </LinearLayout>
 
@@ -153,7 +156,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="10dp"
+                    android:textSize="13sp"
                     android:text="ANIMAL HUSBANDRY"/>
             </LinearLayout>
 
@@ -194,7 +198,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="10dp"
+                    android:textSize="13sp"
                     android:text="FISHERIES"/>
             </LinearLayout>
 
@@ -229,7 +234,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="10dp"
+                    android:textSize="13sp"
                     android:text="IRRRIGATION"/>
             </LinearLayout>
 
