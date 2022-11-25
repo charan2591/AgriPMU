@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:fitsSystemWindows="false"
         app:cardElevation="5dp"
-
+        app:cardUseCompatPadding="true"
         >
 
         <LinearLayout
