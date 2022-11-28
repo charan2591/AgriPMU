@@ -28,7 +28,6 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:padding="15dp"
-                android:background="@drawable/bg_menu_card"
                 android:orientation="vertical"
                 >
 
@@ -39,6 +38,7 @@
                     />
 
                 <TextView
+                    android:id="@+id/txtAgriculture"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -75,6 +75,7 @@
                     />
 
                 <TextView
+                    android:id="@+id/txtHorticulture"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -117,6 +118,7 @@
                     />
 
                 <TextView
+                    android:id="@+id/txtSericulture"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -153,6 +155,7 @@
                     />
 
                 <TextView
+                    android:id="@+id/txtAnimalHusbandry"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -196,6 +199,7 @@
                     />
 
                 <TextView
+                    android:id="@+id/txtFisheries"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -232,6 +236,7 @@
                     />
 
                 <TextView
+                    android:id="@+id/txtIrrigation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"

@@ -26,10 +26,9 @@ class RecyclerAdapter(val viewModel: MainViewModel , val arrayList: ArrayList<Ma
             itemView.findViewById<TextView>(R.id.title).text = itemModel.title
             itemView.findViewById<ImageButton>(R.id.delete).setOnClickListener{
                 viewModel.remove(itemModel)
-//                notifyItemRemoved(arrayList.indexOf(itemModel))
-
-                val intent = Intent(context,BottomBarActivity::class.java)
-                context.startActivity(intent)
+                notifyItemRemoved(arrayList.indexOf(itemModel))
+//                val intent = Intent(context,BottomBarActivity::class.java)
+//                context.startActivity(intent)
 
             }
         }

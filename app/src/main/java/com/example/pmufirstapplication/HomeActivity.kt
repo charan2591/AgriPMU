@@ -1,5 +1,6 @@
 package com.example.pmufirstapplication
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
@@ -39,6 +40,9 @@ class HomeActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAnchorView(R.id.fab)
                 .setAction("Action", null).show()
+
+            val intent = Intent(this,BottomBarActivity::class.java)
+            startActivity(intent)
         }
 
         init()
@@ -66,7 +70,7 @@ class HomeActivity : AppCompatActivity() {
 
     }
 
-    fun addData()
+    private fun addData()
     {
         var title = binding.titletxt.text.toString()
         if(title.isNullOrBlank())

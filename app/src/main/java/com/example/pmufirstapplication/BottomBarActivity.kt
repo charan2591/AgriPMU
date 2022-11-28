@@ -1,10 +1,12 @@
 package com.example.pmufirstapplication
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.navigation.ui.AppBarConfiguration
 import com.example.pmufirstapplication.databinding.ActivityBottomBarBinding
-import com.example.pmufirstapplication.databinding.ActivityHomeBinding
+import layout.FragmentSearch
 
 class BottomBarActivity : AppCompatActivity() {
 
@@ -15,31 +17,73 @@ class BottomBarActivity : AppCompatActivity() {
         binding = ActivityBottomBarBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.bottomNav.setOnNavigationItemReselectedListener {
-            when(it.itemId)
-            {
-                R.id.menu_home ->
-                {
+        binding.toolbar.title = "Bottom Bar"
 
+        setSupportActionBar(binding.toolbar)
+
+        loadFragment(FragmentMore())
+
+        binding.bottomNav.setOnItemSelectedListener { it ->
+
+            when (it.itemId) {
+                R.id.menu_home -> {
+                    Toast.makeText(
+                        applicationContext,
+                        "Menu Home ",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    loadFragment(FragmentMore())
+
+                    return@setOnItemSelectedListener true
                 }
 
-                R.id.menu_notification ->
-                {
+                R.id.menu_notification-> {
+                    Toast.makeText(
+                        applicationContext,
+                        "Notifications ",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    loadFragment(FragmentNotification())
 
+                    return@setOnItemSelectedListener true
                 }
 
-                R.id.menu_search->
-                {
+                R.id.menu_search -> {
+                    Toast.makeText(
+                        applicationContext,
+                        "Search ",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    loadFragment(FragmentSearch())
 
+                    return@setOnItemSelectedListener true
                 }
 
-                R.id.menu_profile ->
-                {
+                R.id.menu_profile -> {
+                    Toast.makeText(
+                        applicationContext,
+                        "Profile ",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    loadFragment(FragmentProfile())
 
+                    return@setOnItemSelectedListener true
                 }
+
             }
+            false
+
         }
 
+    }
+
+
+    fun loadFragment(fragment: Fragment) {
+        // load fragment
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(binding.container.id, fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
 }
 
