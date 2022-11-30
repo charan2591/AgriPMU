@@ -33,7 +33,6 @@ class RecyclerAdapter(val viewModel: MainViewModel , val arrayList: ArrayList<Ma
             }
         }
 
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {

@@ -33,9 +33,9 @@ class FragmentSearch : Fragment() {
         binding = FragmentSearchBinding.inflate(inflater, container, false)
         context ?: return binding.root
 
-        return binding.root
+         init()
 
-        init()
+        return binding.root
      }
 
 
@@ -45,13 +45,15 @@ class FragmentSearch : Fragment() {
         val factory = SearchViewModelFactory()
         viewModel = ViewModelProvider(this).get(SearchViewModel::class.java)
 
-        initialiseAdapter()
         addData()
+        initialiseAdapter()
+
     }
 
     private fun initialiseAdapter(){
         binding.recyclerSearch.layoutManager = viewManager
         observeData()
+
     }
 
     private fun observeData() {
@@ -62,22 +64,22 @@ class FragmentSearch : Fragment() {
 
     }
 
-    fun addData()
+    private fun addData()
     {
-
-            var model =  SearchModel("Hari","2 bag(s)","Rohtak"
+            val model =  SearchModel("Hari","2 bag(s)","Rohtak"
                 ,"1 day ago","Rs 1250")
             viewModel.add(model)
-            var model1 =  SearchModel("Ramesh","1 bag(s)","Bhiwani"
+            val model1 =  SearchModel("Ramesh","1 bag(s)","Bhiwani"
                 ,"2 days ago","Rs 1050")
             viewModel.add(model1)
-            var model2 =  SearchModel("Gagan","2 bag(s)","Jind"
+            val model2 =  SearchModel("Gagan","2 bag(s)","Jind"
                 ,"2 days ago","Rs 1500")
             viewModel.add(model2)
-            var model3 =  SearchModel("Vishal","3 bag(s)","Karnal"
+            val model3 =  SearchModel("Vishal","3 bag(s)","Karnal"
                 ,"3 days ago","Rs 1000")
             viewModel.add(model3)
-            binding.recyclerSearch.adapter?.notifyDataSetChanged()
+
+//            binding.recyclerSearch.adapter?.notifyDataSetChanged()
     }
 
 }
