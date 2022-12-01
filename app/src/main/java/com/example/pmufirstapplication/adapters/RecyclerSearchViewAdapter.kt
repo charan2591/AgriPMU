@@ -10,10 +10,17 @@ import com.example.pmufirstapplication.R
 import com.example.pmufirstapplication.models.SearchModel
 import com.example.pmufirstapplication.viewmodels.SearchViewModel
 import java.util.*
+import kotlin.collections.ArrayList
 
 class RecyclerSearchViewAdapter(val viewModel: SearchViewModel, var arrayList: ArrayList<SearchModel>
                                 , val context: Context
 ) : RecyclerView.Adapter<RecyclerSearchViewAdapter.SearchViewHolder>(), Filterable{
+
+    var arrayListFiltered = ArrayList<SearchModel>()
+
+    init {
+        arrayListFiltered = arrayList
+    }
 
     inner class SearchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -42,15 +49,15 @@ class RecyclerSearchViewAdapter(val viewModel: SearchViewModel, var arrayList: A
     }
 
     override fun onBindViewHolder(holder: SearchViewHolder, position: Int) {
-        holder.bind(arrayList[position])
+        holder.bind(arrayListFiltered[position])
     }
 
     override fun getItemCount(): Int {
 
-        if(arrayList.size==0){
+        if(arrayListFiltered.size==0){
             Toast.makeText(context,"List is empty", Toast.LENGTH_LONG).show()
         }
-        return arrayList.size
+        return arrayListFiltered.size
     }
 
     override fun getFilter(): Filter {
@@ -59,32 +66,33 @@ class RecyclerSearchViewAdapter(val viewModel: SearchViewModel, var arrayList: A
                 val charSearch = constraint.toString()
 
                 val filterResults = FilterResults()
-                filterResults.values = countryFilterList
+//                filterResults.values = countryFilterList
 
                 if (constraint == null || constraint.length == 0) {
-                    filterResults.count = itemsModelsl.size()
-                    filterResults.values = itemsModelsl
+                    arrayListFiltered = arrayList
                 } else {
-                    val resultsModel: MutableList<SearchModel> = ArrayList()
+                    val resultsModel: ArrayList<SearchModel> = ArrayList()
                     val searchStr = constraint.toString().lowercase()
-                    for (itemsModel in itemsModelsl) {
-                        if (itemsModel.getName().contains(searchStr) || itemsModel.getEmail()
-                                .contains(searchStr)
+                    for (itemsModel in arrayList)
+                    {
+                        if (itemsModel.farmerName.lowercase().contains(searchStr)
+                        //                        || itemsModel.location
+//                                .contains(searchStr)
                         ) {
                             resultsModel.add(itemsModel)
                         }
-                        filterResults.count = resultsModel.size
-                        filterResults.values = resultsModel
+
                     }
+                    arrayListFiltered = resultsModel
                 }
 
-
+                filterResults.values = arrayListFiltered
                 return filterResults
             }
 
             @Suppress("UNCHECKED_CAST")
             override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
-                arrayList = results?.values as ArrayList<SearchModel>
+                arrayListFiltered = results?.values as ArrayList<SearchModel>
                 notifyDataSetChanged()
             }
         }
