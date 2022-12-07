@@ -1,6 +1,7 @@
 package com.example.pmufirstapplication
 
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -21,6 +22,7 @@ class BottomBarActivity : AppCompatActivity() {
         binding.toolbar.title = "Bottom Bar"
 
         setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         loadFragment(FragmentMore())
 
@@ -78,8 +80,19 @@ class BottomBarActivity : AppCompatActivity() {
 
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                // todo: goto back activity from here
+                finish()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
 
-    fun loadFragment(fragment: Fragment) {
+
+    private fun loadFragment(fragment: Fragment) {
         // load fragment
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(binding.container.id, fragment)

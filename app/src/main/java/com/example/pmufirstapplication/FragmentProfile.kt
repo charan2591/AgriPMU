@@ -34,8 +34,23 @@ class FragmentProfile :Fragment() {
     fun viewInitializations() {
 
         // To show back button in actionbar
-        (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
+//        (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
+          binding.btUpdate.setOnClickListener{
+              if (validateInput()) {
 
+                  // Input is valid, here send data to your server
+
+                  val firstName =  binding.etFirstName.text.toString()
+                  val lastName = binding.etLastName.text.toString()
+                  val email = binding.etEmail.text.toString()
+                  val contactNo = binding.etContactNo.text.toString()
+                  val etDes = binding.etDes.text.toString()
+
+                  Toast.makeText(context,"Profile Update Successfully",Toast.LENGTH_SHORT).show()
+                  // Here you can call you API
+
+              }
+          }
     }
 
     // Checking if the input in form is valid
@@ -75,7 +90,7 @@ class FragmentProfile :Fragment() {
     }
 
     // Hook Click Event
-    fun performUpdateUser(view: View) {
+     fun performUpdateUser(view: View) {
         if (validateInput()) {
 
             // Input is valid, here send data to your server
