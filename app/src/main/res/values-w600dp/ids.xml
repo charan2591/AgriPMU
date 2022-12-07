@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="bt_register" type="id" />
+    <item name="et_des" type="id" />
+    <item name="layout_des" type="id" />
+    <item name="et_contact_no" type="id" />
+    <item name="layout_contact_no" type="id" />
+    <item name="et_email" type="id" />
+    <item name="layout_email" type="id" />
+    <item name="et_last_name" type="id" />
+    <item name="layout_last_name" type="id" />
+    <item name="et_first_name" type="id" />
+    <item name="layout_first_name" type="id" />
+    <item name="layout_image" type="id" />
+    <item name="tv_heading" type="id" />
+</resources>

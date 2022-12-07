@@ -40,7 +40,6 @@ class RecyclerSearchViewAdapter(val viewModel: SearchViewModel, var arrayList: A
 //            }
         }
 
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchViewHolder {

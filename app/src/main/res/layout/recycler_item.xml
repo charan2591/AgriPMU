@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_margin="10dp"
-    android:layout_height="wrap_content">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
+    android:layout_height="wrap_content"
+    app:cardUseCompatPadding="true">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@color/colorLightGrnBox">
 
         <TextView
             android:id="@+id/title"
@@ -36,7 +38,7 @@
             android:layout_marginTop="22dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="35dp"
-            android:backgroundTint="#ffff"
+            android:backgroundTint="#ffffff"
             android:src="@drawable/baseline_delete_24"
             tools:ignore="SpeakableTextPresentCheck" />
     </RelativeLayout>

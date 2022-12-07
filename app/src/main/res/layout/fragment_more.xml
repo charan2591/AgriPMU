@@ -43,7 +43,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="AGRICULTURE"
-                    android:textSize="13sp"/>
+                    android:textSize="11sp"/>
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -79,7 +79,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:textSize="13sp"
+                    android:textSize="11sp"
                     android:text="HORTICULTURE"/>
             </LinearLayout>
 
@@ -122,7 +122,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:textSize="13sp"
+                    android:textSize="11sp"
                     android:text="SERICULTURE"/>
             </LinearLayout>
 
@@ -160,7 +160,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:layout_marginTop="10dp"
-                    android:textSize="13sp"
+                    android:textSize="11sp"
                     android:text="ANIMAL HUSBANDRY"/>
             </LinearLayout>
 
@@ -203,7 +203,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:textSize="13sp"
+                    android:textSize="11sp"
                     android:text="FISHERIES"/>
             </LinearLayout>
 
@@ -240,7 +240,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:textSize="13sp"
+                    android:textSize="11sp"
                     android:text="IRRRIGATION"/>
             </LinearLayout>
 
