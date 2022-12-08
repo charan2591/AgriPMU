@@ -14,21 +14,21 @@ class BottomBarActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityBottomBarBinding
+    private var fragmentName : String = "Home Menu"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityBottomBarBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.toolbar.title = "Bottom Bar"
-
+        binding.toolbar.title = fragmentName
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
         loadFragment(FragmentMore())
 
         binding.bottomNav.setOnItemSelectedListener { it ->
 
-            when (it.itemId) {
+            when (it.itemId)
+            {
                 R.id.menu_home -> {
                     Toast.makeText(
                         applicationContext,
@@ -36,7 +36,8 @@ class BottomBarActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT
                     ).show()
                     loadFragment(FragmentMore())
-
+                    fragmentName = "Home Menu"
+                    binding.toolbar.title = fragmentName
                     return@setOnItemSelectedListener true
                 }
 
@@ -47,7 +48,8 @@ class BottomBarActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT
                     ).show()
                     loadFragment(FragmentNotification())
-
+                    fragmentName = "Notifications "
+                    binding.toolbar.title = fragmentName
                     return@setOnItemSelectedListener true
                 }
 
@@ -58,7 +60,8 @@ class BottomBarActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT
                     ).show()
                     loadFragment(FragmentSearch())
-
+                    fragmentName = "Search "
+                    binding.toolbar.title = fragmentName
                     return@setOnItemSelectedListener true
                 }
 
@@ -69,11 +72,15 @@ class BottomBarActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT
                     ).show()
                     loadFragment(FragmentProfile())
-
+                    fragmentName = "Profile "
+                    binding.toolbar.title = fragmentName
                     return@setOnItemSelectedListener true
                 }
+                else -> {
 
+                }
             }
+
             false
 
         }

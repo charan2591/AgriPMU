@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import com.example.pmufirstapplication.databinding.FragmentMoreBinding
 import com.example.pmufirstapplication.databinding.FragmentProfileBinding
 
-class FragmentMore :Fragment() {
+class FragmentMore : BaseFragment() {
 
     private lateinit var binding : FragmentMoreBinding
     override fun onCreateView(
@@ -26,7 +26,6 @@ class FragmentMore :Fragment() {
         binding.linrAgriculture.setOnClickListener{
             binding.linrAgriculture.background =  (ContextCompat.getDrawable(context!!, R.drawable.bg_menu_card_selctd))
             binding.txtAgriculture.setTextColor(ContextCompat.getColor(context!!, R.color.white))
-
             normalLaytBackground(1)
         }
 
@@ -72,6 +71,7 @@ class FragmentMore :Fragment() {
     {
         val drawable = R.drawable.card_selector
         val color = R.color.colorTransparntBlack
+        setIntent(MultiSelectorRadioActivity::class.java)
 
         if(num == 1)
         {

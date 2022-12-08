@@ -83,6 +83,6 @@
             android:layout_gravity="center"
             android:paddingRight="20dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/bg_btn_bck"/>
+            android:background="@drawable/bg_round_btn"/>
     </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

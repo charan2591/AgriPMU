@@ -2,6 +2,7 @@ package com.example.pmufirstapplication
 
 import android.R
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.FrameLayout
 import android.widget.RadioButton
 import android.widget.RadioGroup
@@ -17,6 +18,7 @@ class MultiSelectorRadioActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMultiSelectorRadioBinding
+    private var fragmentName : String = "Android"
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
@@ -24,7 +26,9 @@ class MultiSelectorRadioActivity : AppCompatActivity() {
         binding = ActivityMultiSelectorRadioBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.toolbar.title = fragmentName
         setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         // Checked change Listener for RadioGroup 1
         // Checked change Listener for RadioGroup 1
@@ -40,7 +44,7 @@ class MultiSelectorRadioActivity : AppCompatActivity() {
                         "Android RadioButton checked",
                         Toast.LENGTH_SHORT
                     ).show()
-
+                    fragmentName = "Android"
                     loadFragment(FragmentForm())
                 }
                 binding.radioiPhone -> {
@@ -49,6 +53,7 @@ class MultiSelectorRadioActivity : AppCompatActivity() {
                         "iPhone RadioButton checked",
                         Toast.LENGTH_SHORT
                     ).show()
+                    fragmentName = "iPhone"
                     loadFragment(FragmentBuying())
                 }
                 binding.radioWindows -> {
@@ -57,14 +62,28 @@ class MultiSelectorRadioActivity : AppCompatActivity() {
                         "windows RadioButton checked",
                         Toast.LENGTH_SHORT
                     ).show()
+                    fragmentName = "Windows"
                     loadFragment(FragmentSelling())
                 }
                 else -> {
 
                 }
             }
+
+            binding.toolbar.title = fragmentName
         }
 
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                // todo: goto back activity from here
+                finish()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
     private fun loadFragment(fragment: Fragment) {
